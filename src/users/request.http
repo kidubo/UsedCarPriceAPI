@@ -15,11 +15,11 @@ GET http://localhost:3000/auth/4
 GET http://localhost:3000/auth?email=cd@hjk.com
 
 ### Delete a user with agiven id
-DELETE  http://localhost:3000/auth/1
+DELETE  http://localhost:3000/auth/5
 
 
 ### Update a user 
-PATCH http://localhost:3000/auth/4
+PATCH http://localhost:3000/auth/7
 Content-Type: application/json
 
 {
