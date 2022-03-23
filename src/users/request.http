@@ -3,8 +3,8 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "cd@hjk.com",
-    "password": "1234abcd"
+    "email": "max@io.com",
+    "password": "maxio2022"
 }
 
 ### Get a User by id
@@ -12,10 +12,10 @@ GET http://localhost:3000/auth/4
 
 
 ### Find All users with a given email
-GET http://localhost:3000/auth?email=cd@hjk.com
+GET http://localhost:3000/auth?email=max@io.com
 
 ### Delete a user with agiven id
-DELETE  http://localhost:3000/auth/5
+DELETE  http://localhost:3000/auth/4
 
 
 ### Update a user 
