@@ -19,6 +19,9 @@ Content-Type: application/json
 ### Get a Signin User Profile
 GET http://localhost:3000/auth/myprofile
 
+### SignOut the login user
+POST  http://localhost:3000/auth/signout
+
 ### Get a User by id
 GET http://localhost:3000/auth/4
 
