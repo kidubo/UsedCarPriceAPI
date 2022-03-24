@@ -8,7 +8,7 @@ import {
   Post,
   Query,
   Session,
-  UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
@@ -17,24 +17,19 @@ import { Serialize } from '../interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 import { AuthService } from './auth/auth.service';
 import { CurrentUSer } from './decorators/current-user.decorator';
-import { CurrentUSerInterceptor } from './interceptors/current-user.interceptor';
 import { User } from './entities/users.entities';
+import { AuthGuard } from '../guards/auth.guard';
 
 @Controller('auth')
 @Serialize(UserDto)
-@UseInterceptors(CurrentUSerInterceptor)
 export class UsersController {
   constructor(
     private usersService: UsersService,
     private authService: AuthService,
   ) {}
 
-  // @Get('/myprofile')
-  // myprofile(@Session() session: any) {
-  //   return this.usersService.findOne(session.userId);
-  // }
-
   @Get('/myprofile')
+  @UseGuards(AuthGuard)
   myprofile(@CurrentUSer() user: User) {
     return user;
   }
