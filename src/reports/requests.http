@@ -3,11 +3,12 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make": "BMW",
-    "year": 2013,
-    "model": "5-Series",
+    "make": "Toyota",
+    "year": 2019,
+    "model": "V8",
      "lng": 0,
     "lat": 0,
-     "mileage": 10000,
-    "price": 500000
+     "mileage": 1000,
+    "price": 900000
 }
+
