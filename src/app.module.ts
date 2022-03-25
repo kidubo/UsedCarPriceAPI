@@ -25,6 +25,12 @@ import { Report } from './reports/entities/reports.entity';
         };
       },
     }),
+    // TypeOrmModule.forRoot({
+    //   type: 'sqlite',
+    //   database: 'db.sqlite',
+    //   entities: [User, Report], // Connect the entities to the root of our connection
+    //   synchronize: true,
+    // }),
     UsersModule,
     ReportsModule,
   ],
