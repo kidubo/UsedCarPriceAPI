@@ -1,9 +1,11 @@
 import {
   Body,
   Controller,
+  Get,
   Param,
   Patch,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { AdminGuard } from 'src/guards/admin.guard';
@@ -13,6 +15,7 @@ import { CurrentUSer } from 'src/users/decorators/current-user.decorator';
 import { User } from 'src/users/entities/users.entities';
 import { ApproveReportDto } from './dtos/approve.report.dto';
 import { CreateReportDTO } from './dtos/create-report.dto';
+import { GetEstimateDTO } from './dtos/get-estimate.dto';
 import { reportDto } from './dtos/report.dto';
 import { ReportsService } from './reports.service';
 
@@ -34,5 +37,11 @@ export class ReportsController {
       parseInt(id),
       body.approved,
     );
+  }
+
+  @Get()
+  getEstimate(@Query() query: GetEstimateDTO) {
+    // console.log(query);
+    return this.reportsService.createEstimate(query);
   }
 }
