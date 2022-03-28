@@ -3,12 +3,21 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make": "Toyota",
+    "make": "Tesla",
     "year": 2019,
-    "model": "V8",
+    "model": "Model E",
      "lng": 0,
     "lat": 0,
-     "mileage": 1000,
-    "price": 900000
+     "mileage": 100,
+    "price": 200000
+}
+
+
+### Approve the report
+PATCH  http://localhost:3000/reports/2 
+Content-Type: application/json
+
+{
+    "approved": false
 }
 

@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "kdb@io.xyz",
+    "email": "test1@io.xyz",
     "password": "xyzio"
 }
 
@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email":"kdb@io.xyz",
+    "email":"test1@io.xyz",
     "password":"xyzio"
 }
 
@@ -34,24 +34,24 @@ POST  http://localhost:3000/auth/signout
 
 
 ### Get a User by id
-GET http://localhost:3000/auth/4
+GET http://localhost:3000/auth/1
 
 
 
 
 ### Find All users with a given email
-GET http://localhost:3000/auth?email=max@io.com
+GET http://localhost:3000/auth?email=test@io.xyz
 
 
 
 
 ### Delete a user with agiven id
-DELETE  http://localhost:3000/auth/4
+DELETE  http://localhost:3000/auth/2
 
 
 
 ### Update a user 
-PATCH http://localhost:3000/auth/7
+PATCH http://localhost:3000/auth/1
 Content-Type: application/json
 
 {

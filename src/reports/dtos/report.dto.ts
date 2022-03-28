@@ -1,14 +1,8 @@
 import { Expose, Transform } from 'class-transformer';
-import {
-  IsString,
-  IsNumber,
-  Min,
-  Max,
-  IsLongitude,
-  IsLatitude,
-} from 'class-validator';
 
 export class reportDto {
+  @Expose()
+  id: string;
   @Expose()
   make: string;
   @Expose()
@@ -24,7 +18,10 @@ export class reportDto {
   @Expose()
   price: number;
 
-  @Transform(({ obj }) => obj.user.id) // Pull out the { id } from the original report entity and assigni it to userId 
+  @Expose()
+  approved: boolean;
+
+  @Transform(({ obj }) => obj.user.id) // Pull out the { id } from the original report entity and assigni it to userId
   @Expose()
   userId: number;
 }
